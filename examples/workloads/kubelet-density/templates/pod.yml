@@ -1,12 +1,12 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: kubelet-density-{{.Iteration}}
+  name: kubelet-density-app-{{.Iteration}}
   labels:
-    name: kubelet-density
+    name: kubelet-density-app
 spec:
   containers:
-  - name: kubelet-density
+  - name: kubelet-density-app
     image: {{.containerImage}}
     ports:
     - containerPort: 8080
