@@ -5,6 +5,7 @@ metadata:
   labels:
     name: kubelet-density-app
 spec:
+  nodeName: {{.targetNode}}
   containers:
   - name: kubelet-density-app
     image: {{.containerImage}}
