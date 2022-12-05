@@ -5,13 +5,13 @@ FROM golang:1.18 AS builder
 ARG TARGETOS=linux
 ARG TARGETARCH
 
-ADD . /litmus-go
-WORKDIR /litmus-go
+ADD . /kube-burner
+WORKDIR /kube-burner
 
 RUN export GOOS=${TARGETOS} && \
     export GOARCH=${TARGETARCH}
 
-RUN CGO_ENABLED=0 go build -o /output/experiments ./cmd/kube-burner
+RUN CGO_ENABLED=0 go build -o /output/kube-burner ./cmd/kube-burner
 
 # Deploy stage
 FROM registry.fedoraproject.org/fedora-minimal:latest
