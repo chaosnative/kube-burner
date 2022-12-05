@@ -3,7 +3,7 @@ name: Push
 on:
   push:
     branches:
-      - add_mulitarch
+      - master
     tags-ignore:
       - '**'
 jobs:
@@ -31,8 +31,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.UDIT_DNAME }}
-          password: ${{ secrets.UDIT_PASS }}
+          username: ${{ secrets.DNAME }}
+          password: ${{ secrets.DPASS }}
 
       - name: Build and push
         uses: docker/build-push-action@v3
@@ -40,4 +40,4 @@ jobs:
           push: true
           file: build/Dockerfile
           platforms: linux/amd64,linux/arm64
-          tags: uditgaurav/kube-burner:ci
+          tags: chaosnative/kube-burner:ci
