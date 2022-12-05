@@ -3,7 +3,7 @@ name: Push
 on:
   push:
     branches:
-      - master
+      - add_multiarch
     tags-ignore:
       - '**'
 jobs:
